@@ -1,0 +1,2 @@
+#Push local branch to remote repo
+git push -u origin <branch-name>
