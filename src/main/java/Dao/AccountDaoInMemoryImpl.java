@@ -5,8 +5,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import Beans.Account;
+import org.springframework.stereotype.Repository;
 
+import Beans.Account;
+@Repository
 public class AccountDaoInMemoryImpl implements AccountDao {
 
 	private Map<Long, Account> accountsMap = new HashMap<>();

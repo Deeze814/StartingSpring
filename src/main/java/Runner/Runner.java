@@ -1,6 +1,7 @@
 package Runner;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import Services.AccountService;
 import Beans.Account;
@@ -10,10 +11,23 @@ import Dao.AccountDao;
 public class Runner {
 	
 	public static void main(String[] args){
+		/*********************************************
+		 * If we want to use Java Based configuration*
+		 *********************************************/
+		//AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(BeanConfiguration.class);
+		//AccountService service = context.getBean(AccountService.class);
 		
-		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(BeanConfiguration.class);
-	
-		AccountService service = context.getBean(AccountService.class);
+		/*********************************************
+		 * If we want to use XML Based configuration *
+		 *********************************************/
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("/Config/beans.xml");
+		AccountService service = context.getBean("accountService", AccountService.class);
+		
+		/*********************************************************
+		 * If we want to use Java Annotation Based configuration *
+		 *********************************************************/
+		//ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("/Config/beans-annotation.xml");
+		//AccountService service = context.getBean("accountServiceImpl", AccountService.class);
 	
 		Account account1 = service.getAccount(1);
 		Account account2 = service.getAccount(2);
