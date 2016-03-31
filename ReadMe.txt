@@ -8,4 +8,8 @@
 (8) Issue git commands from git bash:
 	--git remote add origin git@github.com:Deeze814/StartingSpring.git
 	--git push -u origin master
+
 	
+--On Switching branches
+(1) You may need to set the jdk to 1.8
+(2) You may need to run Project --> Clean in order to get a successful Maven Install

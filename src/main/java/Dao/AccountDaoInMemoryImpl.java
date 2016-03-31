@@ -12,6 +12,11 @@ import Beans.Account;
 public class AccountDaoInMemoryImpl implements AccountDao {
 
 	private Map<Long, Account> accountsMap = new HashMap<>();
+	
+	public void setAccountsMap(Map<Long, Account> accountsMap){
+		this.accountsMap = accountsMap;
+	}
+	
 	{
 		Account account1 = new Account();
 		Account account2 = new Account();
