@@ -14,14 +14,14 @@ public class Runner {
 		/*********************************************
 		 * If we want to use Java Based configuration*
 		 *********************************************/
-		//AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(BeanConfiguration.class);
-		//AccountService service = context.getBean(AccountService.class);
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(BeanConfiguration.class);
+		AccountService service = context.getBean(AccountService.class);
 		
 		/*********************************************
 		 * If we want to use XML Based configuration *
 		 *********************************************/
-		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("/Config/beans.xml");
-		AccountService service = context.getBean("accountService", AccountService.class);
+		//ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("/Config/beans.xml");
+		//AccountService service = context.getBean("accountService", AccountService.class);
 		
 		/*********************************************************
 		 * If we want to use Java Annotation Based configuration *
